@@ -15,6 +15,16 @@ const Log = require('./Log.js').Log
   
 }
 
+{ // Sting startsWith() 方法用来判断当前字符串是否是以另外一个给定的子字符串“开头”的，根据判断结果返回 true 或 false[es6]
+  // 第二个参数 position 在 str 中搜索 searchString 的结束位置，默认值为 str.length，也就是真正的字符串结尾处
+
+  let str = "To be, or not to be, that is the question."
+  let isStart = str.startsWith('To be')
+  let isStart1= str.startsWith('to be', 19)
+  Log('String startsWith Result:\n', isStart, isStart1)
+
+}
+
 { // Sting endsWith() 方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回 true 或 false （ES6）
   // 第二个参数 position 在 str 中搜索 searchString 的结束位置，默认值为 str.length，也就是真正的字符串结尾处
 
@@ -120,5 +130,91 @@ const Log = require('./Log.js').Log
   }
 // Smith, John
   Log('String replace Result:\n', replaceStr, replaceStr1, newstr)
+}
+
+
+{ // Sting search() 方法执行正则表达式和 String对象之间的一个搜索匹配。
+  // 如果果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 -1。
+  let str = 'a333bc'
+  let re = /bc/gi
+  Log('String search Result:\n', str.search(re))
  
 }
+
+{ // Sting slice() 方法提取一个字符串的一部分，并返回一新的字符串 A级 (字符串切片)
+  // 如果果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 -1。
+  let str = 'Hello Node.js is Cennavi in China'
+  let result = str.slice(0,5)
+  let result1 = str.slice(-5)
+  Log('String slice Result:\n', result,result1)
+}
+// http://www.cnblogs.com/littledu/archive/2011/04/18/2019475.html (slice，substring区别)
+{ // Sting substr() 法返回一个字符串中从指定位置开始到指定字符数的字符。 (注意与)
+  // 如果第二个参数length 为 0 或负值，则 substr 返回一个空字符串。如果忽略 length，则 substr 提取字符，直到字符串末尾。
+  let str = 'Hello Node.js is Cennavi in China'
+  let result = str.substr(6)
+  Log('String substr Result:\n', result)
+}
+
+// http://www.cnblogs.com/littledu/archive/2011/04/18/2019475.html (slice，substring区别)
+{ // Sting substring() 方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。
+  
+  let str = 'Hello Node.js is Cennavi in China'
+  let result = str.substring(0,6)
+  Log('String substring Result:\n', result)
+}
+
+{ // Sting split() 使用指定的分隔符字符串将一个String对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。 A级
+  // 如果果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 -1。
+  let str = 'Hello Node.js is Cennavi in China'
+  let result = str.split(' ')
+  Log('String split Result:\n', result)
+}
+
+
+{ // toLocaleLowerCase()方法根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。
+  let str = 'H'
+  let result = str.toLocaleLowerCase()
+  Log('String toLocaleLowerCase Result:\n', result)
+}
+
+{ // 使用本地化（locale-specific）的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。
+  let str = 'h'
+  let result = str.toLocaleUpperCase()
+  Log('String toLocaleUpperCase Result:\n', result)
+}
+
+
+{ // toLowerCase() 会将调用该方法的字符串值转为小写形式，并返回。
+  let str = 'A'
+  let result = str.toLowerCase()
+  Log('String toLowerCase Result:\n', result)
+}
+
+{ // toUpperCase() 将调用该方法的字符串值转换为大写形式，并返回。
+  let str = 'a'
+  let result = str.toUpperCase()
+  Log('String toUpperCase Result:\n', result)
+}
+
+{ // trim() 方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR）。
+  let str = '   foo  '
+  let result = str.trim()
+  Log('String trim Result:\n', result)
+}
+
+
+{ // valueOf() 方法返回一个String对象的原始值（primitive value）
+  let str = 'Hello world'
+  let result = str.valueOf()
+  Log('String valueOf Result:\n', result)
+}
+
+{ // String.raw() 是一个模板字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @，是用来获取一个模板字符串的原始字面量值的。ES6
+  let name = "Bob";
+  Log('String raw Result:\n', String.raw `Hi\n${name}!`) 
+}
+
+
+
+
